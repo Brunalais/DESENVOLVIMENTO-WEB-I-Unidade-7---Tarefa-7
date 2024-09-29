@@ -1,0 +1,183 @@
+/* Reseta alguns estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estilo da navegação */
+.navigation {
+    background: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    color: #fff;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ddd;
+}
+
+/* Botões do menu */
+.menu-open, .menu-close {
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white; /* Ajuste para garantir visibilidade sobre o banner escuro */
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.menu-open:hover, .menu-close:hover {
+    color: #ddd; /* Ajuste para garantir visibilidade sobre o banner escuro */
+}
+
+.menu-close {
+    display: none;
+}
+
+/* Banner */
+.banner {
+    background: #333;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.2em;
+}
+
+/* Seções */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Estilo da coleção de objetos */
+.collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.item {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de títulos e parágrafos */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Estilo de tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Esconde a navegação na impressão */
+@media print {
+    .navigation, .menu-open, .menu-close {
+        display: none !important;
+    }
+}
+
+/* Mostra e esconde o menu ao clicar nos botões */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .navigation {
+    display: flex;
+}
+
+input[type="checkbox"]:checked ~ .menu-open {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .menu-close {
+    display: inline-block;
+}
